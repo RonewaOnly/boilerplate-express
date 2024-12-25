@@ -5,7 +5,7 @@ let app = express();
 console.log("Hello World");
 
 app.get('/', (req, res) => {
-    res.send("Hello World"); // This sends "Hello World" as a response when the root route is accessed
+    res.send("Hello Express"); // This sends "Hello World" as a response when the root route is accessed
 });
 
 
