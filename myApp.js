@@ -44,6 +44,7 @@ app.get('/now', function(req, res, next) {
   })
   .post((req, res) => {
     // Handle POST request
+    res.json({ name: `${req.body.first} ${req.body.last}` });
   });
   app.post('/submit', (req, res) => {
     console.log(req.body.name); // John Doe
