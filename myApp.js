@@ -4,6 +4,11 @@ require('dotenv').config();
 
 app.use('/public', express.static(__dirname + '/public'));
 app.use('/views', express.static(__dirname + '/views'));
+app.use(function(req, res, next) {
+    console.log(`${req.method} ${req.path} - ${req.ip}`);
+    next(); // Continue to the next middleware or route handler
+  });
+  
 // Log "Hello World" directly when the file runs
 console.log("Hello World");
 
