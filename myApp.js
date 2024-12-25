@@ -1,6 +1,8 @@
 let express = require('express');
 let app = express();
 require('dotenv').config(); 
+const bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use('/public', express.static(__dirname + '/public'));
 app.use('/views', express.static(__dirname + '/views'));
@@ -43,7 +45,12 @@ app.get('/now', function(req, res, next) {
   .post((req, res) => {
     // Handle POST request
   });
-
+  app.post('/submit', (req, res) => {
+    console.log(req.body.name); // John Doe
+    console.log(req.body.last);  // 25
+    res.send('Data received!');
+  });
+  
   
 
 
