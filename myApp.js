@@ -27,7 +27,13 @@ app.get('/json', (req, res) => {
         res.json({"message": "Hello json"});
     }
 });
-
+app.get('/now', function(req, res, next) {
+    req.time = new Date().toString();  // Add current time to request object
+    next();  // Pass control to the next middleware or handler
+  }, function(req, res) {
+    res.json({time: req.time});  // Send the time as a JSON response
+  });
+  
 
 
 
