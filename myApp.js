@@ -1,6 +1,7 @@
 let express = require('express');
 let app = express();
 
+app.use('/public', express.static(__dirname + '/public'));
 app.use('/views', express.static(__dirname + '/views'));
 // Log "Hello World" directly when the file runs
 console.log("Hello World");
