@@ -12,7 +12,9 @@ app.get('/', (req, res) => {
     // Send the file at the given path
     res.sendFile(__dirname + '/views/index.html');
 });
-
+app.get('/json', (req, res) => {
+    res.json({"message": "Hello json"});
+});
 
 
 
