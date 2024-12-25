@@ -33,6 +33,9 @@ app.get('/now', function(req, res, next) {
   }, function(req, res) {
     res.json({time: req.time});  // Send the time as a JSON response
   });
+  app.get('/:word/echo', (req, res) => {
+    res.json({ echo: req.params.word });
+  });
   
 
 
